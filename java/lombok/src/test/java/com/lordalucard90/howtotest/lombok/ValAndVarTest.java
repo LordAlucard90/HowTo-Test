@@ -11,7 +11,7 @@ import static org.hamcrest.CoreMatchers.instanceOf;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertThat;
 
-public class VariablesTest {
+public class ValAndVarTest {
 
     // when you uncomment this part you cannot compile so it is final
 //    @Test
