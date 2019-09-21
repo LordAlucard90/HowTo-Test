@@ -1,0 +1,28 @@
+version: "3"
+
+services:
+  db-postgres:
+    image: postgres
+    container_name: db-postgres
+    restart: always
+    ports:
+      - 5432:5432
+    volumes:
+      - ./init-postgres.sql:/docker-entrypoint-initdb.d/init.sql:ro
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+
+  db-mysql:
+    image: mysql
+    container_name: db-mysql
+    restart: always
+    ports:
+      - 3306:3306
+    volumes:
+      - ./init-mysql.sql:/docker-entrypoint-initdb.d/init.sql:ro
+    environment:
+      MYSQL_USER: mysql
+      MYSQL_PASSWORD: mysql
+      MYSQL_RANDOM_ROOT_PASSWORD: 1
+

@@ -1,4 +1,4 @@
-package com.lordalucard90.howtotest.spring.databases.spring.databases;
+package com.lordalucard90.howtotest.spring.databases;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

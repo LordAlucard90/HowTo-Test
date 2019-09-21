@@ -2,12 +2,13 @@
 .idea/
 *.iml
 
+todo.txt
+
 # Spring
 target/
 !**/.mvn/wrapper/maven-wrapper.jar
 !**/src/main/**
 !**/src/test/**
-
 
 # Compiled class file
 *.class
