@@ -1,8 +1,6 @@
 package com.lordalucard90.howtotest.spring.databases.entity;
 
 
-import com.lordalucard90.howtotest.spring.databases.Application;
-import com.lordalucard90.howtotest.spring.databases.repository.SimpleEntityRepository;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
