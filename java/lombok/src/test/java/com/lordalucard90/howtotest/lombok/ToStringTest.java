@@ -17,6 +17,8 @@ public class ToStringTest {
         assertTrue(text.contains("base"));
         assertFalse(text.contains("staticString"));
         assertFalse(text.contains("static"));
+        assertFalse(text.contains("excludedString"));
+        assertFalse(text.contains("excluded"));
     }
 
     @Test
@@ -33,6 +35,7 @@ public class ToStringTest {
         String text = testClass.toString();
         assertEquals("base", testClass.getBaseString());
         assertTrue(text.contains("baseString"));
+        assertFalse(text.contains("base"));
         assertTrue(text.contains("other"));
     }
 
@@ -79,6 +82,8 @@ public class ToStringTest {
 class ToStringBaseTestClass {
     static String staticString = "static";
     String baseString = "base";
+    @ToString.Exclude
+    String excludedString = "excluded";
 }
 
 @ToString(onlyExplicitlyIncluded = true)
