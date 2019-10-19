@@ -76,7 +76,7 @@ public class ToStringTest {
 }
 
 /*
-    Tested Class
+    Tested Classes
  */
 @ToString
 class ToStringBaseTestClass {

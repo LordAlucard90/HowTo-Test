@@ -57,7 +57,7 @@ public class AccessorsTest {
 }
 
 /*
-    Tested Class
+    Tested Classes
  */
 @Getter
 @Setter

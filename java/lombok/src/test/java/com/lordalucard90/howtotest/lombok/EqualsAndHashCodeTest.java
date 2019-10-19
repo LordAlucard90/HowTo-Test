@@ -77,7 +77,7 @@ public class EqualsAndHashCodeTest {
 }
 
 /*
-    Tested Class
+    Tested Classes
  */
 @EqualsAndHashCode
 class EqualsAndHashCodeBaseTestClass {

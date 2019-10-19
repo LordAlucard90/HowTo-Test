@@ -44,7 +44,11 @@ The available annotations are:
 
 - Constructors
 
-    TBD
+    This annotation creates automatically an implementation for the choose constructor. 
+
+    For RequiredArgsConstructor by default will be included all the non null and final not initialized fields.
+
+    For AllArgsConstructor by default will be included all the fields except for final already initialized.
 
 - Data And Value
 
