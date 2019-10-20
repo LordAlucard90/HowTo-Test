@@ -33,8 +33,8 @@ public class ToStringTest {
     public void toStringUsingGettersTest() {
         var testClass = new ToStringUsingGettersTestClass();
         String text = testClass.toString();
-        assertEquals("base", testClass.getBaseString());
-        assertTrue(text.contains("baseString"));
+        assertEquals("base", testClass.getString());
+        assertTrue(text.contains("string"));
         assertFalse(text.contains("base"));
         assertTrue(text.contains("other"));
     }
@@ -95,9 +95,9 @@ class ToStringOnlyExplicitTestClass {
 
 @ToString(doNotUseGetters = true)
 class ToStringUsingGettersTestClass {
-    String baseString = "other";
+    String string = "other";
 
-    public String getBaseString() {
+    public String getString() {
         return "base";
     }
 }
