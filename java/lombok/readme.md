@@ -44,7 +44,7 @@ The available annotations are:
 
 - Constructors
 
-    This annotation creates automatically an implementation for the choose constructor. 
+    These annotations creates automatically an implementation for the chosen constructor. 
 
     For RequiredArgsConstructor by default will be included all the non null and final not initialized fields.
 
@@ -52,7 +52,11 @@ The available annotations are:
 
 - Data And Value
 
-    TBD
+    These are used to wrap other annotations.
+    
+    Data: `@ToString`, `@EqualsAndHashCode`, `@Getter` on all fields, `@Setter` on all non-final fields, `@RequiredArgsConstructor`.
+        
+    Value: `final` on class, `private` and `final` on all fields, `@ToString`, `@EqualsAndHashCode`, `@Getter` on all fields, `@AllArgsConstructor`.
 
 - Builder
 

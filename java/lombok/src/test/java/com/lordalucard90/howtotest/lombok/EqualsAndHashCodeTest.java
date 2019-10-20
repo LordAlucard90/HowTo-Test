@@ -15,6 +15,7 @@ public class EqualsAndHashCodeTest {
         assertNotEquals(testClassA, testClassB);
         assertNotNull(testClassA.hashCode());
         assertNotNull(testClassB.hashCode());
+        assertEquals(testClassA.hashCode(), testClassA.hashCode());
         assertNotEquals(testClassA.hashCode(), testClassB.hashCode());
     }
 
