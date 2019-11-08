@@ -13,7 +13,8 @@ import org.junit.runners.Suite.SuiteClasses;
         ToStringTest.class,
         EqualsAndHashCodeTest.class,
         ConstructorsTest.class,
-        DataAndValueTest.class
+        DataAndValueTest.class,
+        BuilderTest.class,
 })
 public class LombokTestSuit {
 }
