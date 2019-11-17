@@ -2,11 +2,14 @@ package com.lordalucard90.howtotest.lombok;
 
 import lombok.AccessLevel;
 import lombok.Builder;
+import lombok.Singular;
 import lombok.var;
 import org.junit.Test;
 
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
+import java.util.Arrays;
+import java.util.List;
 
 import static org.junit.Assert.*;
 
@@ -68,8 +71,72 @@ public class BuilderTest {
         Method end = BuilderDifferentMethodsNamesTestClass.class.getDeclaredMethod("end");
         assertNotNull(end);
     }
-}
 
+    @Test
+    public void BuilderToBuilderTestClassTest() {
+        BuilderToBuilderTestClass testClassA = BuilderToBuilderTestClass
+                .builder()
+                .first("first")
+                .second("second")
+                .build();
+        BuilderToBuilderTestClass testClassB = testClassA
+                .toBuilder()
+                .first("other")
+                .build();
+        assertEquals("first", testClassA.first);
+        assertEquals("second", testClassA.second);
+        assertNotEquals(testClassA, testClassB);
+        assertEquals("other", testClassB.first);
+        assertEquals("second", testClassB.second);
+    }
+
+    @Test
+    public void BuilderSingularTestClassTest() {
+        List<String> multipleStrings = Arrays.asList("a", "b");
+
+        BuilderSingularTestClass testClass = BuilderSingularTestClass
+                .builder()
+                .multipleString(multipleStrings)
+                .singularStrings(multipleStrings.get(0))
+                .singularStrings(multipleStrings.get(1))
+                .build();
+
+        assertEquals(multipleStrings, testClass.multipleString);
+        assertEquals(multipleStrings, testClass.singularStrings);
+    }
+
+    @Test
+    public void BuilderDefaultTestClassTest() {
+        BuilderDefaultTestClass testClass = BuilderDefaultTestClass.builder().build();
+
+        assertNull(testClass.string);
+        assertEquals("default", testClass.stringWithDefault);
+    }
+
+    @Test
+    public void BuilderConstructorTestClassTest() {
+        BuilderConstructorTestClass testClass = BuilderConstructorTestClass
+                .builder()
+                .aString("string")
+                .anInt(1)
+                .build();
+
+        assertEquals("string", testClass.aString);
+        assertEquals(1, testClass.anInt);
+    }
+
+    @Test
+    public void BuilderMethodTestClassTest() {
+        BuilderMethodTestClass testClass = BuilderMethodTestClass
+                .builder()
+                .aString("string")
+                .anInt(1)
+                .build();
+
+        assertEquals("string", testClass.aString);
+        assertEquals(1, testClass.anInt);
+    }
+}
 /*
     Tested Classes
  */
@@ -91,11 +158,47 @@ class BuilderDifferentMethodsNamesTestClass {
     private String aString;
 }
 
-// todo constructor and to method
-
-// todo
 @Builder(toBuilder = true)
 class BuilderToBuilderTestClass {
-    private String aString;
+    String first;
+    String second;
 }
 
+@Builder
+class BuilderSingularTestClass {
+    List<String> multipleString;
+    @Singular("singularStrings")
+    List<String> singularStrings;
+}
+
+@Builder
+class BuilderDefaultTestClass {
+    String string;
+    @Builder.Default String stringWithDefault = "default";
+}
+
+class BuilderConstructorTestClass {
+    String aString;
+    int anInt;
+
+    @Builder
+    public BuilderConstructorTestClass(String aString, int anInt) {
+        this.aString = aString;
+        this.anInt = anInt;
+    }
+}
+
+class BuilderMethodTestClass {
+    String aString;
+    int anInt;
+
+    private BuilderMethodTestClass(){}
+
+    @Builder
+    public static BuilderMethodTestClass methodBuilder(String aString, int anInt) {
+        BuilderMethodTestClass obj = new BuilderMethodTestClass();
+        obj.aString = aString;
+        obj.anInt = anInt;
+        return obj;
+    }
+}
