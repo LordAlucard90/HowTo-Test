@@ -60,7 +60,8 @@ The available annotations are:
 
 - Builder
 
-    TBD
+    This annotation allows to create a readable way to create a new object using 
+    'set like' method called between a `builder()` and a `build()` method.
 
 - SneakyThrows
 
@@ -72,7 +73,7 @@ The available annotations are:
 
 - With
 
-    TBD
+    This annotation is used easily create a copy constructor given an instance with only one different field.
 
 - Log
 

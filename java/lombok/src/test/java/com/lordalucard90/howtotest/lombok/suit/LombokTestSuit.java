@@ -15,6 +15,7 @@ import org.junit.runners.Suite.SuiteClasses;
         ConstructorsTest.class,
         DataAndValueTest.class,
         BuilderTest.class,
+        WithTest.class,
 })
 public class LombokTestSuit {
 }
