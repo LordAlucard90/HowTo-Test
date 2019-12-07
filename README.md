@@ -17,6 +17,6 @@ Be sure to disable your databases if you want to run this docker script or chang
 ## Content
 
 - Java
-    - [Lombok](./lombook/readme.md)
+    - [Lombok](./java/lombook/readme.md)
     - Spring
-        - [Databases Integration](./spring/databases/readme.md)
+        - [Databases Integration](./java/spring/databases/readme.md)

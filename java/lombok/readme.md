@@ -7,24 +7,24 @@ All the available annotations can be found [here](https://projectlombok.org/feat
 Some annotations can be placed both on the class, on the filed or on the method.
 
 The available annotations are:
-- Variable Declaration (Val And Var)
+- **Variable Declaration (Val And Var)**
 
     In java types definitions can be very long, especially in for loops.
     To avoid long declaration can be used `val` or `var`.
     
     Their main difference is the mutability, `val` is not mutable as opposed to `var` that is mutable.
 
-- NotNull Method Parameter 
+- **NotNull Method Parameter** 
 
     It is possible to annotate a method parameter as `@NotNull` to generate an automatic null check that throws an exception if it is null.
     
     When the annotation is placed on a constructor then null check is placed after the `super()` or `this()` calls.
 
-- CleanUp
+- **CleanUp**
 
     TBD
 
-- Accessors
+- **Accessors**
 
     When a field is defined in a class usually are also defined getters and setters resulting in many not so useful lines of code.
     
@@ -32,17 +32,17 @@ The available annotations are:
     
     The annotations can be placed either on the class and on the field. 
 
-- ToString
+- **ToString**
 
     This annotation creates automatically an implementation for the `toString` method. 
 
-- EqualsAndHashCode
+- **EqualsAndHashCode**
 
     This annotation creates automatically an implementation for the `equals` and `hasCode` methods. 
 
     By default will be included all the non static fields with name and value.
 
-- Constructors
+- **Constructors**
 
     These annotations creates automatically an implementation for the chosen constructor. 
 
@@ -50,7 +50,7 @@ The available annotations are:
 
     For AllArgsConstructor by default will be included all the fields except for final already initialized.
 
-- Data And Value
+- **Data And Value**
 
     These are used to wrap other annotations.
     
@@ -58,26 +58,26 @@ The available annotations are:
         
     Value: `final` on class, `private` and `final` on all fields, `@ToString`, `@EqualsAndHashCode`, `@Getter` on all fields, `@AllArgsConstructor`.
 
-- Builder
+- **Builder**
 
     This annotation allows to create a readable way to create a new object using 
     'set like' method called between a `builder()` and a `build()` method.
 
-- SneakyThrows
+- **SneakyThrows**
 
     TBD
 
-- Synchronized
+- **Synchronized**
 
     TBD
 
-- With
+- **With**
 
     This annotation is used easily create a copy constructor given an instance with only one different field.
 
-- Log
+- **Log**
 
-    TBD
+    This annotation is used easily instantiate a logger.
 
 
 

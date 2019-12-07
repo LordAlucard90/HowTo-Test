@@ -9,15 +9,16 @@ import org.junit.runners.Suite.SuiteClasses;
 @SuiteClasses({
         ValAndVarTest.class,
         NotNullParamTest.class,
+        CleanUpTest.class,
         AccessorsTest.class,
         ToStringTest.class,
         EqualsAndHashCodeTest.class,
         ConstructorsTest.class,
         DataAndValueTest.class,
         BuilderTest.class,
-
+        SneakyThrowsTest.class,
+        SynchronizedTest.class,
         WithTest.class,
-
         LogTest.class
 })
 public class LombokTestSuit {
